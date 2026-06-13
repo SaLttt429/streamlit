@@ -48,7 +48,7 @@ if mode == "🔋 放電模式 (使用電池)":
                              marker=dict(size=12, color='red'), text=[f"({x_val}%, {current_p:.2f}W)"], textposition="top left"))
     
     fig.update_layout(title="螢幕亮度與耗電功率關係圖 (含動態切線)", xaxis_title="螢幕亮度 x (%)", yaxis_title="耗電功率 P (W)",
-                      ylim=dict(range=[1, 11]))
+                      yaxis=dict(range=[1, 11]))
     st.plotly_chart(fig, use_container_width=True)
 
     # 數據面板
