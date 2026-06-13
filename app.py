@@ -91,7 +91,7 @@ else:
                              marker=dict(size=12, color='blue'), text=[f"({x_val}%, {current_e:.2f}W)"], textposition="bottom left"))
     
     # 標示出微積分算出的最佳快充綠色區間 (例如亮度在 0%~30% 之間發熱最少，充電最快)
-    fig.add_vrect(x0=0, x1=30, fillcolor="green", opacity=0.1, line_width=0, caption="微積分計算：低發熱最佳充電區間")
+    fig.add_vrect(x0=0, x1=30, fillcolor="green", opacity=0.1, line_width=0, annotation_text="微積分計算：低!")
 
     fig.update_layout(title="螢幕亮度與實質充電效能關係圖", xaxis_title="螢幕亮度 x (%)", yaxis_title="淨充電功率 E (W)")
     st.plotly_chart(fig, use_container_width=True)
