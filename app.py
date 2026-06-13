@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 # 設置網頁標題與介紹
 st.set_page_config(page_title="微積分專題：智慧電能最佳化控制系統", layout="wide")
 st.title("📱 微積分在智慧型手機雙模式最佳化亮度控制之應用")
-st.caption("逢甲大學 微積分(二)期末專題競賽數值工具演示")
+st.caption("逢甲大學 電機一乙 曾宥銓 微積分(二)期末專題競賽數值工具演示")
 st.markdown("---")
 
 # 側邊欄：模式切換與環境變數設定
