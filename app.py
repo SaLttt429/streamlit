@@ -107,7 +107,9 @@ if mode == "🔋 放電模式 (使用電池)":
         st.metric(label="邊際耗電率 dP/dx (斜率)", value=f"+{slope:.4f} W/%", delta="調亮 1% 增加的瓦數")
 
     st.info("💡 **微積分工程解釋**：當你滑動亮度，圖形上紅色虛線的**斜率 (一階導數)**會即時變動。斜率越陡峭，代表高亮度下的邊際耗電代價越高。利用動態求導，系統能精準計算出續航力衰減率。當前導數為：")
-    st.latex(r"\frac{dP}{dx} = " + f"{slope:.4f} \\text{ W/\%}")
+    
+    # 使用安全的 rf 前綴字串，徹底修正原本爆掉的語法錯誤
+    st.latex(rf"\frac{{dP}}{{dx}} = {slope:.4f} \text{{ W/\%}}")
 
 # ==============================================================================
 # 🔌 模式二：充電模式
@@ -137,7 +139,7 @@ else:
                              marker=dict(size=14, color='#1f77b4', line=dict(color='white', width=2)),
                              text=[f"  ({x_val}%, {current_e:.2f}W)"], textposition="bottom left"))
     
-    # 🌟 劃分三大核心物理區間 (修正為接受的 'top left' 與 'top right' 參數)
+    # 🌟 劃分三大核心物理區間
     fig.add_vrect(x0=0, x1=30, fillcolor="green", opacity=0.12, line_width=0, 
                   annotation_text="🟢 1. 最佳高效區", annotation_position="top left")
     
